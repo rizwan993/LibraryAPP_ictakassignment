@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var signupRouter = require('./src/routes/signupRoutes');
 var loginRouter = require('./src/routes/loginRoutes');
+const port = process.env.PORT || 2000;
 
 
 var navb = [ 
@@ -68,4 +69,4 @@ app.get('/home', function(req,res){
 
     });
 });
-app.listen(3333);
+app.listen(port, ()=>{console.log("Server running at " + port)});
